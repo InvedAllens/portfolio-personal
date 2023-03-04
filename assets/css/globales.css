@@ -1,0 +1,95 @@
+:root{
+    --dark-main:#1f1d2e;
+    --clear-white:#c4c4c4;
+    --accent-ligth: #7bb8d1;
+    --accent-main:#f78166;
+    --color-page-header-bg: #0d1117;
+    --accent-secondary:#9CDD29;
+}
+html{
+    box-sizing: border-box;
+    font-size:62.5%;
+    scroll-behavior: smooth;
+    
+    
+}
+@media screen and (min-width:768px) {
+    html{
+        scroll-padding-top:15vh;
+    }
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+body{
+    /* font-family: 'Inconsolata', monospace; */
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    font-size:1.6rem;
+    background-color: var(--dark-main);
+}
+/* contrarresta el efecto del header fijo  */
+.body-scroll{
+    padding-top:15vh;
+}
+p{
+    font-size: 2rem;
+    color:var(--clear-white);
+    line-height: 1.5;
+}
+
+h1,h2,h3{
+    color: black;
+}
+h1{
+    font-size: 3.5rem;
+}
+h2{
+    font-size: 3rem;
+    text-align: center;
+}
+h3{
+    font-size: 2.6rem;
+    text-align: center;
+}
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: var(--accent-ligth);
+    font-size: 1.6rem;
+}
+.contenedor{
+    width: 100%;
+}
+.btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+label,input[type='text'],input[type='email']{
+    display: block;
+    width: 100%;
+    margin: auto;
+    font-family:'Inconsolata', monospace;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-main);
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--accent-main);
+}
+

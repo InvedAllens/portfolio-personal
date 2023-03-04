@@ -1,0 +1,12 @@
+.sobreMi{
+    width: 90vw;
+    margin: 0 auto;
+}
+.sobreMi__titulo{
+    color:var(--accent-secondary) ;
+    margin-bottom: 2rem;
+}
+.sobreMi p{
+    line-height:4rem;
+    text-align: justify;
+}

@@ -1,0 +1,66 @@
+.skills{
+    width: 50vw;
+    margin: 1rem auto;
+
+}
+.skills__titulo{
+    color: var(--accent-secondary);
+    margin: 3rem auto;
+}
+.skill__subtitulo{
+    text-align: left;
+    color: var(--accent-main);
+    margin-top: 2rem;
+}
+.skills__categoria{
+    margin-top:2rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+}
+.skill__card{
+    display: flex;
+    width:max-content;
+    padding:0.5rem 1rem;
+    align-items: center;
+    border-radius: 1rem;
+    margin-right: 2rem;
+    gap: 1rem;
+    justify-content:space-evenly;
+}
+.skill__tecnologia{
+    color: var(--dark-main);
+    font-weight: 500;
+    
+}
+.bg-javascript{
+    background-color: #fbbb19;
+}
+.bg-javascript p{
+    color: var(--dark-main);
+}
+.bg-php{
+    background-color: #7A86B8;
+}
+.bg-java{
+    background-color: #c74634;
+}
+.bg-html{
+    background-color: #D43900;
+}
+.bg-css{
+    background-color: #1e73be;
+}
+.bg-sql{
+    background-color:#279910;
+}
+.bg-sass{
+    background-color: #bf4080;
+}
+.bg-git{
+    background-color: #f14e32;
+}
+.skill__icono{
+    width: 2rem;
+}

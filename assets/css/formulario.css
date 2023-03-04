@@ -1,0 +1,50 @@
+.formulario{
+    width: 50vw;
+    margin: 1rem auto;
+    border: 1px solid var(--accent-ligth);
+    border-radius: 1rem;
+    height: max-content;
+
+}
+.formulario__legend{
+    font-size: 3rem;
+    color: var(--accent-secondary);
+}
+.campo{
+    width: 90%;
+    margin: 1rem auto;
+     
+}
+.campo label{
+    font-size:2rem;
+    color: var(--clear-white);
+    
+}
+.campo input{
+    width: 100%;
+    font-size: 2rem;
+    border-radius: 1rem;
+    height:4rem ;
+    
+}
+.campo input:focus{
+    outline:0 none;
+    border:2px solid var(--accent-main);
+}
+.campo textarea{
+    width: 100%;
+    font-size: 2rem;
+    height: 20rem;
+    resize: none;
+    border-radius: 1rem;
+}
+.campo textarea:focus{
+    outline:0 none;
+    border:2px solid var(--accent-main);
+}
+.campo input[type="submit"]{
+    text-align: center;
+}
+.envia{
+    text-align: center;
+}

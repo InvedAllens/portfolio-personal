@@ -1,0 +1,72 @@
+.header{
+   background-color:var(--color-page-header-bg);
+}
+/* mantiene la navegacion fija (en este caso tambien es necesario corregir el padding del body para que no haya un efecto de salto ) */
+@media screen and (min-width:768px) {
+    .fijo{
+        left: 0;
+        top:0;
+        position: fixed;
+        width: 100%;
+        box-shadow: .1rem .1rem .2rem #fcfcfc; 
+    }
+}
+
+.contenedor-navegacion-logo{
+    width:90vw;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    height: 15vh;
+}
+@media  screen and (max-width:768px) {
+    .contenedor-navegacion-logo{
+        flex-direction:column;
+    }
+  .navegacion{
+    flex-direction: column;
+  }
+    
+}
+
+.navegacion{
+    display: flex;
+}
+.navegacion__item{
+    padding: 1rem;
+    margin-right: 1rem;
+    position: relative;    
+}
+.enlace-nav:hover{
+    color: var(--accent-main);
+}
+.enlace-nav::before{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    width: 40%;
+    background-color: var(--accent-ligth);
+}
+
+.enlace-nav:hover::before{
+
+    width: 100%;
+    background-color: var(--accent-main);
+}
+
+.header h1{
+    color: var(--clear-white);
+}
+.enlace-nav{
+    color: white;
+}
+.activo{
+    color:var(--accent-main);
+}
+.activo::before {
+    width: 100%;
+    background-color: var(--accent-main);
+}

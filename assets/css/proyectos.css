@@ -1,0 +1,59 @@
+.proyectos-contenedor{
+    width: 80vw;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.proyectos__titulo{
+    text-align: center;
+    color: var(--accent-secondary);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.proyecto-contenedor{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    border: 1px solid var(--accent-main);
+    border-radius: 1rem;
+    gap: 1rem;
+}
+.proyecto__imagen{
+    width: 35%;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.appsalon{
+    background-image: url(./../img/appsalon\ captura\ tablet.png);
+}
+
+.proyecto__descripcion{
+    width: 65%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap:1rem
+}
+.proyecto__nombre{
+    color: var(--accent-ligth);
+}
+.proyecto__enlaces{
+    display: flex;
+    gap: 1rem;
+}
+.proyecto__deploy{
+    background-color:var(--accent-ligth) ;
+}
+.proyecto__deploy a{
+    color: var(--dark-main);
+
+}
+.proyecto__repositorio{
+    background-color: var(--accent-secondary);
+}
+.proyecto__repositorio a{
+    color: var(--dark-main);
+}

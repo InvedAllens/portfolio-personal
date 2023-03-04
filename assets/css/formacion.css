@@ -1,0 +1,39 @@
+.formacion{
+    width: 80vw;
+    margin: 1rem auto;
+    display: flex;
+    gap: 1rem;
+
+}
+.formacion__titulo{
+    color: var(--accent-secondary);
+}
+.formacion__contenedor{
+width: 50vw;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+.experiencia__titulo{
+ color: var(--accent-ligth);   
+}
+.experiencia__item{
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 1px solid var(--clear-white);
+    text-align: center;
+}
+.educacion__titulo{
+    color: var(--accent-main);  
+}
+.educacion__item{
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 1px solid var(--clear-white);
+    text-align: center;
+}
