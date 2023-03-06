@@ -40,6 +40,13 @@
 .proyecto__nombre{
     color: var(--accent-ligth);
 }
+.proyecto__tecnologias{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    justify-content:start;
+}
+
 .proyecto__enlaces{
     display: flex;
     gap: 1rem;
@@ -49,10 +56,16 @@
 }
 .proyecto__deploy a{
     color: var(--dark-main);
-
+}
+.proyecto__deploy:hover{
+    filter: brightness(120%);
+    /* background-color:lighten(var(--accent-ligth),10%) ; */
 }
 .proyecto__repositorio{
     background-color: var(--accent-secondary);
+}
+.proyecto__repositorio:hover{
+    filter: brightness(120%);
 }
 .proyecto__repositorio a{
     color: var(--dark-main);

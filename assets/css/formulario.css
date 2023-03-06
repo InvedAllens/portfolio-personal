@@ -9,42 +9,143 @@
 .formulario__legend{
     font-size: 3rem;
     color: var(--accent-secondary);
+    margin:2rem;
 }
 .campo{
     width: 90%;
     margin: 1rem auto;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
      
 }
-.campo label{
+.input-label{
     font-size:2rem;
-    color: var(--clear-white);
+    color: var(--accent-secondary);
+    background-color: white;
+    font-weight: 700;
+    width: min-content;
+    visibility: hidden;
+    position: absolute;
+    top: 1.375rem;
+    left: 0.7rem;  
+    transition: all 0.2s;
     
 }
-.campo input{
+.input{
     width: 100%;
     font-size: 2rem;
     border-radius: 1rem;
-    height:4rem ;
-    
+    height:5.3rem ;
+    box-sizing: border-box;
+    font-weight: 500;
+    color: var(--dark-main);
 }
-.campo input:focus{
+.input::placeholder {
+    color: var(--accent-secondary);
+    transition: all 0.1s;
+    font-weight: 700;
+  }
+
+.input:focus{
     outline:0 none;
     border:2px solid var(--accent-main);
+    color:var(--dark-main);
 }
-.campo textarea{
+.input:focus::placeholder{
+    visibility: hidden;
+    transition: all 0.1s;
+}
+.textarea{
     width: 100%;
     font-size: 2rem;
     height: 20rem;
     resize: none;
     border-radius: 1rem;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    border-top-left-radius: 0;
 }
-.campo textarea:focus{
+.textarea::placeholder{
+  color: var(--accent-secondary);
+}
+
+.textarea:focus{
     outline:0 none;
     border:2px solid var(--accent-main);
+    color: var(--dark-main);
+    border-top-left-radius: 0;
+} 
+
+.input:not(:placeholder-shown) + .input-label,
+.input:focus + .input-label {
+  font-size: 1.8rem;
+  top: 0.25rem;
+  transition: all 0.2s;
+  visibility:visible;
 }
-.campo input[type="submit"]{
-    text-align: center;
+.textarea-label{
+    font-size:2rem;
+    color: var(--accent-secondary);
+    background-color: white;
+    font-weight: 700;
+    width: min-content;
+    visibility: hidden;
+    position: absolute;
+    transition: all 0.2s;
+    border: 1px solid var(--accent-main);
+    border-bottom: none;
 }
-.envia{
-    text-align: center;
+.textarea:focus::placeholder{
+    visibility: hidden;
 }
+.textarea:not(:placeholder-shown) + .textarea-label,
+.textarea:focus + .textarea-label {
+  font-size: 2rem;
+  top:0.25rem;
+  transition: all 0.2s;
+  visibility:visible;
+}
+/*validacion*/
+.input-message-error {
+    display: none;
+    font-weight: 500;
+  }
+  .input-container--invalid {
+    margin-bottom: 0.5rem;
+  }
+  .input-container--invalid .input,.input-container--invalid .textarea {
+    border: 1px solid var(--warning-color);
+    border-radius: 7px;
+  }
+  .input-container--invalid .input::placeholder,.input-container--invalid .textarea::placeholder{
+    color: var(--warning-color);
+  }
+  .input-container--invalid .input-label,.input-container--invalid .textarea-label {
+    color: var(--warning-color);
+  }
+  .input-container--invalid .input-message-error {
+    color: var(--warning-color);
+    display: block;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .contenedor-btn{
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .enviar:hover,.enviar:hover svg{
+    background-color: var(--accent-secondary);
+    color: white;
+    fill:white;
+    
+
+  }
+   /* {
+    border: 1px solid var(--warning-color);
+  } */
+  /* .input-container--invalid .textarea-label {
+    color: var(--warning-color);
+  } */

@@ -1,10 +1,15 @@
 :root{
+    /*colores*/
     --dark-main:#1f1d2e;
     --clear-white:#c4c4c4;
     --accent-ligth: #7bb8d1;
     --accent-main:#f78166;
-    --color-page-header-bg: #0d1117;
+    --color-page-header-bg: #0d1117d3;
     --accent-secondary:#9CDD29;
+    --warning-color:#e73d3d;
+    /*opacidad*/
+    --tw-bg-opacity: 1;
+    --tw-border-opacity: 1;
 }
 html{
     box-sizing: border-box;
@@ -92,4 +97,6 @@ label,input[type='text'],input[type='email']{
 ::-webkit-scrollbar-thumb{
     background: var(--accent-main);
 }
-
+.relative{
+    position: relative;
+}

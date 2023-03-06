@@ -14,10 +14,15 @@
 .hobbie__card{
     display: flex;
     width:33%;
+    height: 20vh;
     padding:0.5rem 1rem;
     align-items: center;
     border-radius: 1rem;
     margin-right: 2rem;
     justify-content: center;
     background-color: var(--color-page-header-bg);
+    gap:2rem;
+}
+.hobbie__card:hover{
+    filter: brightness(120%);
 }

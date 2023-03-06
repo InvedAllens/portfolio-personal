@@ -1,39 +1,116 @@
 .formacion{
     width: 80vw;
-    margin: 1rem auto;
-    display: flex;
-    gap: 1rem;
+    margin:4rem auto;
 
 }
 .formacion__titulo{
     color: var(--accent-secondary);
+    margin: 2rem auto;
 }
 .formacion__contenedor{
-width: 50vw;
+width: 70vw;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
-gap: 1rem;
+gap: 1.2rem;
 }
+
 .experiencia__titulo{
- color: var(--accent-ligth);   
+ color: var(--accent-ligth);
+ margin: 2rem auto;  
 }
 .experiencia__item{
-    width: 80%;
-    margin: 0 auto;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-    border-left: 1px solid var(--clear-white);
-    text-align: center;
+    width: 90%;
+    padding-bottom: 4rem;
+    border-color: var(--clear-white);
+    display: flex;
+    gap: 4rem;
+    justify-content: flex-start;
+    border-left: 1px solid #585353;
+    text-align:justify;
 }
 .educacion__titulo{
-    color: var(--accent-main);  
+    color: var(--accent-main); 
+    margin: 2rem auto; 
 }
 .educacion__item{
-    width: 80%;
+    width: 90%;
+    --tw-border-opacity: 1;
+    padding-bottom: 4rem;
+    border-color: var(--clear-white);
+    display: flex;
+    gap: 4rem;
+    justify-content: flex-start;
+    border-left: 1px solid #585353;
+    text-align:justify;
+}
+/* .educacion__item:first-of-type{
+    border-left:1px solid rgb(16 185 129);
+} */
+
+.formacion__educacion{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
     margin: 0 auto;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-    border-left: 1px solid var(--clear-white);
-    text-align: center;
+}
+.formacion__experiencia{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
+}
+.nodo{
+    position: absolute;
+    outline-color: #000;
+    background-color: rgb(16 185 129/var(--tw-bg-opacity));/*color verde tipo clank de ratchet and clank*/
+    border-radius:100%;
+    width: 1.6rem;
+    height: 1.6rem;
+    aspect-ratio: 1/1;
+    left: -8px;
+    top: -2px;
+}
+.nodo-educacion{
+    background-color: rgb(247 129 102/var(--tw-bg-opacity));
+}
+.nodo-experiencia{
+    background-color: rgb(123 184 209/var(--tw-bg-opacity));
+}
+.nodo-parpadeante{
+    animation: ping 1s cubic-bezier(0,0,.2,1) infinite;
+    width: 1.7rem;
+    height: 1.7rem;
+    aspect-ratio: 1/1;
+    z-index: -10;
+    top: -1.5px;
+    left: -1px;
+    position: absolute;
+    color-scheme: light;
+    border-color: rgb(38 38 38/var(--tw-border-opacity));
+    border-radius: 9999px;
+    /* background-color: rgb(16 185 129/var(--tw-bg-opacity)); */
+}
+.nodo-previo{
+    position: absolute;
+    outline-color: #000;
+    background-color: #585353;
+    border-radius:100%;
+    width: 1.6rem;
+    height: 1.6rem;
+    aspect-ratio: 1/1;
+    left: -8px;
+    top: -2px;
+
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+    }
 }
