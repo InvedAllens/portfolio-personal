@@ -1,5 +1,9 @@
 .header{
    background-color:var(--color-page-header-bg);
+   z-index: 99;
+}
+.logo{
+    font-weight: 500;
 }
 /* mantiene la navegacion fija (en este caso tambien es necesario corregir el padding del body para que no haya un efecto de salto ) */
 @media screen and (min-width:768px) {
@@ -9,6 +13,11 @@
         position: fixed;
         width: 100%;
          
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .navegacion__minombre{
+        display:none;
     }
 }
 
@@ -21,24 +30,65 @@
     padding: 3rem;
     height: 15vh;
 }
-@media  screen and (max-width:768px) {
+@media screen and (min-width:768px) and (max-width:991px) {
+    .contenedor-navegacion-logo{
+        width: 100vw;
+    }
+}
+@media screen and (max-width:767px) {
+    .contenedor-navegacion-logo{
+        flex-wrap: wrap;
+        height: auto;
+    }
+}
+/* @media  screen and (max-width:768px) {
     .contenedor-navegacion-logo{
         flex-direction:column;
-    }
-  .navegacion{
-    flex-direction: column;
-  }
-    
+    } 
+} */
+.menu-mobile{
+    margin-right: 0;
+    cursor: pointer;
+    transition: all 0.5s linear;
 }
-
+@media screen and (min-width:768px) {
+    .menu-mobile{
+        display: none;
+    }
+}
+.menu-mobile:active{
+    transform: scale(0.8);
+    transition: all 0.5 linear;
+}
 .navegacion{
     display: flex;
     gap: 2rem;
 }
+
 .navegacion__item{
     padding: 1rem;
-    margin-right: 1rem;
-    position: relative;    
+    margin-right: 1rem;    
+}
+@media screen and (max-width:767px) {
+    .navegacion{
+        width: 90%;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+    .navegacion__item{
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        cursor: pointer;
+
+    }
+}
+@media screen and (max-width:767px) {
+    .d-none{
+        display: none !important;
+    }
 }
 .enlace-nav:hover{
     color: var(--accent-main);
@@ -54,7 +104,6 @@
 }
 
 .enlace-nav:hover::before{
-
     width: 100%;
     background-color: var(--accent-main);
 }
@@ -64,6 +113,15 @@
 }
 .enlace-nav{
     color: white;
+    position: relative;
+}
+@media screen and (max-width:767px) {
+    .enlace-nav{
+        display: block;
+        margin:0 auto;
+        width: 50%;
+        position: relative;
+    }
 }
 .activo{
     color:var(--accent-main);

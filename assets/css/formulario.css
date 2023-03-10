@@ -1,15 +1,32 @@
+.contactame{
+  text-align: center;
+}
+.contactame__texto{
+  width: 70%;
+  margin: 0 auto;
+  color: var(--accent-ligth);
+}
+.contactame__texto span{
+  color: var(--accent-main);
+}
 .formulario{
     width: 50vw;
     margin: 1rem auto;
     border: 1px solid var(--accent-ligth);
     border-radius: 1rem;
     height: max-content;
-
+}
+@media screen and (max-width:768px) {
+  .formulario{
+    width: 80vw;
+  }
 }
 .formulario__legend{
     font-size: 3rem;
     color: var(--accent-secondary);
     margin:2rem;
+    font-weight: 500;
+    letter-spacing: 1rem;
 }
 .campo{
     width: 90%;
@@ -23,8 +40,8 @@
 }
 .input-label{
     font-size:2rem;
-    color: var(--accent-secondary);
-    background-color: white;
+    color: var(--clear-white);
+    background-color: var(--color-page-header-bg);
     font-weight: 700;
     width: min-content;
     visibility: hidden;
@@ -32,19 +49,23 @@
     top: 1.375rem;
     left: 0.7rem;  
     transition: all 0.2s;
+    letter-spacing: 0.15rem;
     
 }
 .input{
+    border:none;
     width: 100%;
     font-size: 2rem;
     border-radius: 1rem;
-    height:5.3rem ;
-    box-sizing: border-box;
+    height:5.9rem ;
     font-weight: 500;
-    color: var(--dark-main);
+    color: var(--clear-white);
+    background-color: var(--color-page-header-bg);
+    padding: 0.5rem;
+    margin: 2rem;
 }
 .input::placeholder {
-    color: var(--accent-secondary);
+    color: var(--clear-white);
     transition: all 0.1s;
     font-weight: 700;
   }
@@ -52,13 +73,14 @@
 .input:focus{
     outline:0 none;
     border:2px solid var(--accent-main);
-    color:var(--dark-main);
+    color:var(--clear-white);
 }
 .input:focus::placeholder{
     visibility: hidden;
     transition: all 0.1s;
 }
 .textarea{
+    border: none;
     width: 100%;
     font-size: 2rem;
     height: 20rem;
@@ -67,15 +89,19 @@
     box-sizing: border-box;
     margin-top: 2rem;
     border-top-left-radius: 0;
+    color: var(--clear-white);
+    background-color: var(--color-page-header-bg);
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
 }
 .textarea::placeholder{
-  color: var(--accent-secondary);
+  color: var(--clear-white);
 }
 
 .textarea:focus{
     outline:0 none;
     border:2px solid var(--accent-main);
-    color: var(--dark-main);
+    color: var(--clear-white);
     border-top-left-radius: 0;
 } 
 
@@ -88,25 +114,31 @@
 }
 .textarea-label{
     font-size:2rem;
-    color: var(--accent-secondary);
-    background-color: white;
+    color: var(--clear-white);
+    background-color: var(--color-page-header-bg);
     font-weight: 700;
     width: min-content;
     visibility: hidden;
     position: absolute;
     transition: all 0.2s;
-    border: 1px solid var(--accent-main);
-    border-bottom: none;
+    border: none;
+    padding:0 1rem;
+    letter-spacing: 0.15rem;
 }
 .textarea:focus::placeholder{
     visibility: hidden;
 }
+
 .textarea:not(:placeholder-shown) + .textarea-label,
 .textarea:focus + .textarea-label {
   font-size: 2rem;
   top:0.25rem;
   transition: all 0.2s;
   visibility:visible;
+}
+.textarea:focus + .textarea-label{
+  border: 2px solid var(--accent-main);
+  border-bottom: none;
 }
 /*validacion*/
 .input-message-error {
@@ -125,6 +157,10 @@
   }
   .input-container--invalid .input-label,.input-container--invalid .textarea-label {
     color: var(--warning-color);
+  }
+  .input-container--invalid .textarea:focus + .textarea-label{
+    border: 1px solid var(--warning-color);
+    border-bottom: none;
   }
   .input-container--invalid .input-message-error {
     color: var(--warning-color);

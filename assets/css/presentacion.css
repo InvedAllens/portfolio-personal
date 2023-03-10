@@ -4,17 +4,38 @@
     margin: 1rem auto;
     align-items:center;
     height: 85vh;
+    overflow: hidden;
+}
+@media screen and (max-width:768px){
+    .presentacion{
+        height: auto;
+        flex-wrap: wrap-reverse;
+    }
 }
 
 .presentacion__ocupacion{
     font-weight: 900;
     margin-bottom: 1rem;
+    color: var(--accent-main);
+    font-size: 3.5rem;
+}
+@media screen and (max-width:768px) {
+    .presentacion__ocupacion{
+        margin-top: 2rem;
+        font-size: 2.2rem;
+        text-align: center;
+    }
 }
 .enlaces-perfil{
     display: flex;
     margin-top: 1rem;
     gap: 2rem;
-   
+}
+@media screen and (max-width:768px) {
+    .enlaces-perfil{
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 .enlaces-perfil__item{
     border-radius: 1rem;
@@ -28,12 +49,36 @@
     color: white;
 }
 .enlaces-perfil__item:hover{
-    background-color: var(--accent-ligth);
-    border-color: white;
+
+    /* background-color: var(--accent-ligth);
+    border-color: white; */
+    transform: scale(1.1);
     
 }
 .enlaces-perfil__item:hover svg{
-    fill:white;
+    /* fill:white; */
+}
+.enlace-descarga-cv{
+    width:max-content;
+    text-align: center;
+    
+    margin: 0 auto;
+
+}
+.enlace-cv-elemento{
+    display: flex;
+    gap:1rem;
+    color: var(--dark-main);
+    font-weight: 400;
+    background-color:var(--accent-ligth);
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    box-shadow: 5px 5px #7bb8d180;
+}
+.enlace-cv-elemento:hover{
+    filter: brightness(120%);
 }
 
 .presentacion__textos{
@@ -44,13 +89,20 @@
     justify-content: space-between;
     gap: 3rem;
 }
-.presentacion__textos p{
+@media screen and (max-width:768px) {
+    .presentacion__textos{
+        width: 80%;
+    }
+}
+
+.presentacion__descripcion{
     color: var(--clear-white);
     text-align: justify;
 }
-.presentacion__textos h2{
-    color: var(--accent-main);
-    font-size: 3.5rem;
+@media screen and (max-width:768px) {
+    .presentacion__descripcion{
+        text-align: center;
+    }
 }
 .presentacion__imagen{
     width: 30rem;
@@ -60,6 +112,18 @@
     box-shadow: 2px 2px 2px 1px var(--accent-ligth);
     display: flex;
     justify-content: center;
-    align-items: center;
-  
+    align-items: center; 
+}
+
+@media screen and (max-width:992px) {
+    .presentacion__imagen{
+        width: 20rem;
+        height: 20rem;
+    }
+}
+@media screen and (max-width:768px) {
+    .presentacion__imagen{
+        width: 15rem;
+        height: 15rem;
+    }
 }

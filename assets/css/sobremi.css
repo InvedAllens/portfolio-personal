@@ -1,10 +1,12 @@
 .sobreMi{
-    width: 90vw;
-    margin: 0 auto;
+    width: 80vw;
+    margin: 0 auto;    
 }
 .sobreMi__titulo{
     color:var(--accent-secondary) ;
     margin-bottom: 2rem;
+    letter-spacing: 1rem;
+    font-weight: 500;
 }
 .sobreMi p{
     line-height:4rem;

@@ -1,16 +1,25 @@
 .skills{
     width: 50vw;
     margin: 1rem auto;
-
+}
+@media screen and (max-width:767px) {
+    .skills{
+        width: 70vw;
+    }
+    
 }
 .skills__titulo{
     color: var(--accent-secondary);
     margin: 3rem auto;
+    font-weight: 500;
+    letter-spacing:1rem;
 }
 .skill__subtitulo{
     text-align: left;
     color: var(--accent-main);
-    margin-top: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    font-weight: 500;
 }
 .skills__categoria{
     margin-top:2rem;
@@ -18,48 +27,87 @@
     display: flex;
     justify-content:flex-start;
     flex-wrap: wrap;
+    gap: 2rem;
+}
+@media screen and (max-width:767px) {
+    .skills__categoria{
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .skill__card{
     display: flex;
     width:max-content;
-    padding:0.5rem 1rem;
+    height: 3.5rem;
+    padding:0rem 0.5rem;
     align-items: center;
     border-radius: 1rem;
     margin-right: 2rem;
-    gap: 1rem;
-    justify-content:space-evenly;
+    gap: 0.5rem;
+    justify-content:center;
+    text-align: center;
+    
 }
 .skill__tecnologia{
     color: var(--dark-main);
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 1.6rem;
     
 }
 .bg-javascript{
     background-color: #fbbb19;
+    box-shadow: 5px 5px #fbbb1980;
 }
-.bg-javascript p{
-    color: var(--dark-main);
-}
+
 .bg-php{
     background-color: #7A86B8;
+    box-shadow: 5px 5px #7A86B880;
+    padding: 0 2rem;
 }
 .bg-java{
     background-color: #c74634;
+    box-shadow: 5px 5px #c7463480;
+    padding: 0 2rem;
 }
 .bg-html{
     background-color: #D43900;
+    box-shadow: 5px 5px #D4390080;
+    padding: 0 2rem;
 }
 .bg-css{
     background-color: #1e73be;
+    box-shadow: 5px 5px #1e73be80;
+    padding: 0 2rem;
 }
 .bg-sql{
     background-color:#279910;
+    box-shadow: 5px 5px #27991080;
+    padding: 0 2rem;
 }
 .bg-sass{
     background-color: #bf4080;
+    box-shadow: 5px 5px #bf408080;
+    padding: 0 2rem;
 }
 .bg-git{
     background-color: #f14e32;
+    box-shadow: 5px 5px #f14e3280;
+    padding: 0 2rem;
+}
+.bg-angular{
+    background-color: #c40834;
+    box-shadow: 5px 5px #c4083480;
+}
+.bg-matlab{
+    background-color: #0076a8;
+    box-shadow: 5px 5px #0076a880;
+    padding: 0 2rem;
+}
+.bg-android{
+    background-color: #3ddc84;
+    box-shadow: 5px 5px #3ddc8480;
 }
 .skill__icono{
     width: 2rem;

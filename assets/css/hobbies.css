@@ -1,15 +1,29 @@
 .hobbies{
     width: 50vw;
-    margin: 1rem auto;
-
+    margin: 3rem auto;
+}
+@media screen and (max-width:767px) {
+    .hobbies{
+        width: 70vw;
+    }
 }
 .hobbies__titulo{
     color: var(--accent-secondary);
+    font-weight: 500;
+    letter-spacing: 1rem;
+    margin: 4rem 0;
 }
 .hobbies__categoria{
     margin-top:2rem;
     display: flex;
     justify-content:space-between;
+}
+@media screen and (max-width:767px) {
+    .hobbies__categoria{
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
 }
 .hobbie__card{
     display: flex;
@@ -22,6 +36,12 @@
     justify-content: center;
     background-color: var(--color-page-header-bg);
     gap:2rem;
+}
+@media screen and (max-width:767px) {
+    .hobbie__card{
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 .hobbie__card:hover{
     filter: brightness(120%);

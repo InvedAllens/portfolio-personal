@@ -6,18 +6,26 @@
 .formacion__titulo{
     color: var(--accent-secondary);
     margin: 2rem auto;
+    font-weight: 500;
+    letter-spacing: 1rem;
 }
 .formacion__contenedor{
-width: 70vw;
+width: 70%;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
 gap: 1.2rem;
 }
+@media screen and (max-width:768px) {
+    .formacion__contenedor{
+        width: 90%;
+    }
+}
 
 .experiencia__titulo{
  color: var(--accent-ligth);
- margin: 2rem auto;  
+ margin: 2rem auto;
+ font-weight: 400;  
 }
 .experiencia__item{
     width: 90%;
@@ -32,14 +40,14 @@ gap: 1.2rem;
 .educacion__titulo{
     color: var(--accent-main); 
     margin: 2rem auto; 
+    font-weight: 400;
 }
 .educacion__item{
     width: 90%;
-    --tw-border-opacity: 1;
     padding-bottom: 4rem;
     border-color: var(--clear-white);
     display: flex;
-    gap: 4rem;
+    gap:10%;
     justify-content: flex-start;
     border-left: 1px solid #585353;
     text-align:justify;
@@ -56,6 +64,11 @@ gap: 1.2rem;
     align-items: center;
     margin: 0 auto;
 }
+@media screen and (max-width:768px) {
+    .formacion__educacion{
+        width: 90%;
+    }
+}
 .formacion__experiencia{
     width: 70%;
     display: flex;
@@ -63,6 +76,11 @@ gap: 1.2rem;
     position: relative;
     align-items: center;
     margin: 0 auto;
+}
+@media screen and (max-width:768px) {
+    .formacion__experiencia{
+        width: 90%;
+    }
 }
 .nodo{
     position: absolute;
@@ -113,4 +131,10 @@ gap: 1.2rem;
         transform: scale(2);
         opacity: 0;
     }
+}
+.formacion__parrafo{
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    text-align: start;
 }

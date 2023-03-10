@@ -3,14 +3,32 @@ import {validarInput} from "./validaciones.js";
     document.addEventListener("DOMContentLoaded",()=>{
         iniciarApp();
     });
+
     function iniciarApp(){
         const fecha=document.querySelector("#fecha");
         //const fechaActual=new Date();
         const year=new Date().getFullYear();
+        let size=screen.width;
+        console.log(size>=768);
         fecha.innerHTML=year;
-        navegacion();
-        navegacionFija();
+        if(size>=768){
+            navegacionFija();
+            navegacion();
+        }else{
+            navegacionMobile();
+        }
+        
         formulario();
+        window.addEventListener('resize', function(event) {
+            size=screen.width;
+            if(size>=768){
+                navegacionFija();
+                navegacion();
+            }else{
+                navegacionMobile();
+            }
+        },true);
+        keyboard();
     }
     function navegacionFija(){
         const header=document.querySelector(".header");
@@ -52,8 +70,8 @@ import {validarInput} from "./validaciones.js";
             });
         },{
             root:null,
-            rootMargin:'-20px 0px 0px 0px',
-            threshold:0.7
+            rootMargin:'-17px 0px 0px 0px',
+            threshold:0.6
         });
 
         secciones.forEach(seccion => observer.observe(seccion));
@@ -69,6 +87,48 @@ import {validarInput} from "./validaciones.js";
             textarea.addEventListener("blur",validarInput);
         });
     });
+    const form=document.querySelector("#formulario");
+    form.addEventListener("submit",manejarSubmit);
+    }
+    async function manejarSubmit(event){
+        event.preventDefault();
+        const formulario=new FormData(this);
+        const response= await fetch(this.action,{
+            method:this.method,
+            body:formulario,
+            headers:{
+                'Accept':'application/json'
+            }
+        });
+        if(response.ok){
+            this.reset();
+            alert("se envio correctamente el formulario, te estare contestando pronto :)");
+        }else{
+            this.reset();
+            alert("hubo un problema con el envio del formulario, intenta otro metodo de contacto")
+        }
+    }
+    function navegacionMobile(){
+        const menu=document.querySelector(".menu-mobile");
+        const nav=document.querySelector("#navegacion");
+        menu.addEventListener("click",()=>{
+            console.log("haz hecho click sobre el menu");
+            nav.classList.toggle("d-none");
+        });
+    }
+    function keyboard(){
+        let keyBdNumber1;
+        let keyBdNumber2;
+        setInterval(()=>{
+            keyBdNumber1=Math.round(Math.random()*16);
+            keyBdNumber2=Math.round(Math.random()*16);
+            if(keyBdNumber1!=0 && keyBdNumber2!=0){
+                const tecla1=document.querySelector(`#Rectangle${keyBdNumber1}`);
+                tecla1.classList.toggle('typingKB');
+                const tecla2=document.querySelector(`#Rectangle${keyBdNumber2}`);
+                tecla2.classList.toggle('typingKB');   
+            }
+        },200)
     }
 
 })();
