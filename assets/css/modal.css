@@ -1,0 +1,105 @@
+.modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 300ms ease;
+    visibility:hidden;
+    opacity: 0;
+
+}
+
+.modal__contenedor{
+    width: 40rem;
+    height: 30rem;
+    margin: auto;
+    background-color: var(--dark-main);
+    box-shadow: 1px 7px 25px rgba(0,0,0, 0.7);
+    transition: all 300ms ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.modal__contenedor header{
+    padding: 1rem;
+    background-color: var(--accent-main);
+    color: var(--dark-main);
+    font-weight: 700;
+   
+}
+.cerrar-modal{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--dark-main);
+    font-weight: 900;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.cerrar-modal:hover{
+    filter: brightness(130%);
+    transform: scale(1.1);
+}
+.modal__contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: all 300ms ease;
+
+}
+.animacion-modal{
+    visibility:visible;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+.circle1,.circle2,.circle3{
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background-color: var(--accent-main);
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+.circle1{
+    animation: ping 1.2s cubic-bezier(0,0,.2,1) -.32s infinite none;
+}
+.circle2{
+    animation: ping 1.2s cubic-bezier(0.2,0,.2,1) -.16s infinite none;
+}
+.circle3{
+    animation: ping 1.2s cubic-bezier(0.3,0,.2,1)  infinite none;
+}
+.icono-failed{
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--dark-main);
+    background-image: url("./../img/sms_failed.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.icono-success{
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--dark-main);
+    background-image: url("./../img/done.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.btn-cerrar-modal{
+    width:30%;
+    height: 15%;
+    padding: 1rem 2rem;
+    background-color: var(--accent-main);
+    cursor: pointer;
+    text-align: center;
+    
+}

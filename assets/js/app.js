@@ -92,20 +92,82 @@ import {validarInput} from "./validaciones.js";
     }
     async function manejarSubmit(event){
         event.preventDefault();
+        const modal =document.querySelector(".modal");
+        const cerrarModal=document.querySelector(".cerrar-modal");
+        const modalContenido=document.querySelector(".modal__contenedor");
+        const modalBody=document.createElement("DIV");
+        modalBody.classList.add("modal__contenido");
+        modalContenido.appendChild(modalBody);
+
+        const loader=document.createElement("DIV");
+        const circle1=document.createElement("DIV");
+        circle1.classList.add("circle1");
+        const circle2=document.createElement("DIV");
+        circle2.classList.add("circle2");
+        const circle3=document.createElement("DIV");
+        circle3.classList.add("circle3");
+        loader.appendChild(circle1);
+        loader.appendChild(circle2);
+        loader.appendChild(circle3);
+
+        modalBody.appendChild(loader);
+
+        loader.classList.add("animacion-modal");
+
+        let mensaje=document.createElement("P");
+        mensaje.style.padding="1rem";
+        const iconoResponse=document.createElement("DIV");
+        const botonCerrarModal=document.createElement("DIV");
+        botonCerrarModal.classList.add("btn-cerrar-modal");
+        botonCerrarModal.textContent="Cerrar";
+        botonCerrarModal.style.color="#1f1d2e";
+        botonCerrarModal.style.fontWeight="500";
+
+        botonCerrarModal.addEventListener("click",()=>{
+            modal.style.visibility="hidden";
+            modalContenido.removeChild(modalBody);
+        });
+       
+        cerrarModal.addEventListener("click",()=>{
+            modal.style.visibility="hidden";
+            modalContenido.removeChild(modalBody);
+        });
+        modal.style.visibility="visible";
+        modal.style.zindex="100";
+        modal.style.opacity="1";
+
         const formulario=new FormData(this);
-        const response= await fetch(this.action,{
+        let response;
+        //conexion con formspree para enviar mensajes 
+        response= await fetch(this.action,{
             method:this.method,
             body:formulario,
             headers:{
                 'Accept':'application/json'
             }
         });
+    
         if(response.ok){
+            setTimeout(()=>{
+                modalBody.removeChild(loader);
+                iconoResponse.classList.add("icono-success");
+                modalBody.appendChild(iconoResponse);  
+                mensaje.textContent="Gracias por contactarme, respondere lo mas pronto que me sea posible ";
+                modalBody.append(mensaje);
+                modalBody.appendChild(botonCerrarModal);
+            },1500);
             this.reset();
-            alert("se envio correctamente el formulario, te estare contestando pronto :)");
         }else{
-            this.reset();
-            alert("hubo un problema con el envio del formulario, intenta otro metodo de contacto")
+            setTimeout(()=>{
+                modalBody.removeChild(loader);
+                iconoResponse.classList.add("icono-failed");
+                modalBody.appendChild(iconoResponse);              
+                mensaje.textContent="Hubo un problema con el envio del mensaje :/, intenta enviarme desde otra fuente o intenta nuevamente"
+                modalBody.appendChild(mensaje);
+                modalBody.appendChild(botonCerrarModal);
+                this.reset();
+            },1500);
+            
         }
     }
     function navegacionMobile(){
