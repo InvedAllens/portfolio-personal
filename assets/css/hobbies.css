@@ -36,6 +36,7 @@
     justify-content: center;
     background-color: var(--color-page-header-bg);
     gap:2rem;
+    flex-wrap: wrap;
 }
 @media screen and (max-width:767px) {
     .hobbie__card{

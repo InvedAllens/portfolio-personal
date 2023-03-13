@@ -1,0 +1,54 @@
+{
+    "presentacion": 
+        {   
+            "nombre":"Aldo Allende",
+            "ocupacion":"Frontend Developer",
+            "descripcion":"Estudiante de ingeniería eléctrica electrónica, apasionado por las tecnologías de la informacion y la resolución de problemas mediante estas."
+        }
+    ,
+    "sobreMi":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus ipsam sit aperiam qui iure porro, nam est quam libero dolorem at omnis aut vero ab eum nobis nemo quisquam mollitia.",
+    "proyectos":[
+        {
+            "nombre":"Aplicasion gestion de citas y servicios para una barberia  con MVC",
+            "descripcion":"Pagina web para el registro y gestion de citas para una barberia, los usuarios pueden selecionar la fecha y servicios para su cita y el administrador puede adminstrar los servicios y sus campos (CRUD) ademas de las citas de los usuarios.",
+            "tecnologias":{
+                "php":"",
+                "javascrip":"",
+                "mysql":"",
+                "sass":"",
+                "css":"",
+                "html":""
+            }
+                
+            
+        },
+        {
+            "nombre":"Pagina web para mostrar y administrar propiedades con MVC",
+            "descripcion":"Sitio web de bienes raices, se dispone de un login para el admin para gestionar los datos de los vendedores y los inmuebles en un CRUD, se uso Model view controller  ",
+            "tecnologias":{
+                "php":"",
+                "javascrip":"",
+                "mysql":"",
+                "sass":"",
+                "css":"",
+                "html":""
+            }
+                
+            
+        },
+        {
+            "nombre":"Encriptador de texto - Challenge Oracle Next Education",
+            "descripcion":"Encriptación y desencriptación de textos primer desafío del curso OracleOne-Alura",
+            "tecnologias":{
+                "php":"",
+                "javascrip":"",
+                "mysql":"",
+                "sass":"",
+                "css":"",
+                "html":""
+            }
+                
+            
+        }
+    ]
+}

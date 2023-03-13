@@ -55,9 +55,7 @@
     transform: scale(1.1);
     
 }
-.enlaces-perfil__item:hover svg{
-    /* fill:white; */
-}
+
 .enlace-descarga-cv{
     width:max-content;
     text-align: center;
@@ -76,6 +74,7 @@
     border-radius: 1rem;
     font-weight: 700;
     box-shadow: 5px 5px #7bb8d180;
+    margin-bottom: 1rem;
 }
 .enlace-cv-elemento:hover{
     filter: brightness(120%);

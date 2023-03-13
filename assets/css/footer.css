@@ -24,7 +24,9 @@
     justify-content: center;
     gap: 2rem;
 }
-
+.footer-contenedor-redes a:hover{
+    filter: brightness(120%);
+}
 .typingKB{
     animation: keybg 0.4s linear;
 }

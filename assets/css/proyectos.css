@@ -24,26 +24,31 @@
     padding: 1rem;
     overflow: hidden;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .proyecto-contenedor{
         flex-direction: column;
+        max-height:none;
     }
+}
+@media screen and (max-width:991px) {
+    .proyecto-contenedor{
+        max-height:100vh ;
+    }
+    
 }
 .proyecto__imagen{
     width: 35%;
     background-size:contain;
     background-position: center;
     background-repeat: no-repeat;
-    
 }
 .proyecto__contenedor__imagen{
     width: 35%;
 }
 .imagen__bienesraices{
     height: 98%;
-    
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .proyecto__imagen{
         width:100%;
         height: 40vh;
@@ -111,3 +116,11 @@
 .proyecto__repositorio a{
     color: var(--dark-main);
 }
+/* .proyecto__texto{
+    overflow: scroll;
+}
+@media screen and (max-width:767) {
+    .proyecto__texto{
+        overflow: unset;
+    }
+} */
