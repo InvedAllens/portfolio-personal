@@ -109,6 +109,11 @@
     background-color: #3ddc84;
     box-shadow: 5px 5px #3ddc8480;
 }
+.bg-arduino{
+    background-color: #008184;
+    box-shadow: 5px 5px #00818480;
+
+}
 .skill__icono{
     width: 2rem;
 }

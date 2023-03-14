@@ -4,7 +4,7 @@
     --clear-white:#c4c4c4;
     --accent-ligth: #7bb8d1;
     --accent-main:#f78166;
-    --color-page-header-bg: #0d1117e5;
+    --color-page-header-bg: #0d1117c0;
     --accent-secondary:#9CDD29;
     --warning-color:#e73d3d;
     /*opacidad*/
@@ -15,6 +15,7 @@ html{
     box-sizing: border-box;
     font-size:62.5%;
     scroll-behavior: smooth;
+    width: 100%;
     
     
 }
@@ -42,6 +43,16 @@ p{
     color:var(--clear-white);
     line-height: 1.5;
 }
+@media screen and (max-width:991px) {
+    p{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width:767px) {
+    p{
+        font-size: 1.6rem;
+    }
+}
 
 h1,h2,h3{
     color: black;
@@ -57,6 +68,28 @@ h3{
     font-size: 2.6rem;
     text-align: center;
 }
+@media screen and (max-width:991px) {
+    h1{
+        font-size: 2.7rem;
+    }
+    h2{
+        font-size: 2.4rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:767px) {
+    h1{
+        font-size: 2.4rem;
+    }
+    h2{
+        font-size: 2.2rem;
+    }
+    h3{
+        font-size: 1.9rem;
+    }
+}
 img{
     max-width: 100%;
     width: 100%;
@@ -67,6 +100,16 @@ a{
     text-decoration: none;
     color: var(--accent-ligth);
     font-size: 1.6rem;
+}
+@media screen and (max-width:991px) {
+    a{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width:767px) {
+    a{
+        font-size: 1.2rem;
+    }
 }
 .contenedor{
     width: 100%;

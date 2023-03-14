@@ -1,10 +1,10 @@
 .hobbies{
-    width: 50vw;
+    width: 70vw;
     margin: 3rem auto;
 }
 @media screen and (max-width:767px) {
     .hobbies{
-        width: 70vw;
+        width: 80vw;
     }
 }
 .hobbies__titulo{
@@ -28,7 +28,7 @@
 .hobbie__card{
     display: flex;
     width:33%;
-    height: 20vh;
+    height: 23vh;
     padding:0.5rem 1rem;
     align-items: center;
     border-radius: 1rem;

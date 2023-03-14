@@ -13,6 +13,7 @@
     width: 50vw;
     margin: 1rem auto;
     border: 1px solid var(--accent-ligth);
+    box-shadow: 0px 0px 2px 2px rgba(123, 184, 209, 0.308);
     border-radius: 1rem;
     height: max-content;
 }
@@ -28,6 +29,17 @@
     font-weight: 500;
     letter-spacing: 1rem;
 }
+@media screen and (max-width:991px) {
+  .formulario__legend{
+    font-size:2.6rem;
+  }
+}
+@media screen and (max-width:767px) {
+  .formulario__legend{
+    font-size:2.1rem;
+  }
+}
+
 .campo{
     width: 90%;
     margin: 1rem auto;
@@ -50,7 +62,6 @@
     left: 0.7rem;  
     transition: all 0.2s;
     letter-spacing: 0.15rem;
-    
 }
 .input{
     border:none;
@@ -63,6 +74,16 @@
     background-color: var(--color-page-header-bg);
     padding: 0.5rem;
     margin: 2rem;
+}
+@media screen and (max-width:991px) {
+  .input-label,.input{
+    font-size:1.7rem;
+  }
+}
+@media screen and (max-width:767px) {
+  .input-label,.input{
+    font-size:1.6rem;
+  }
 }
 .input::placeholder {
     color: var(--clear-white);
@@ -97,6 +118,16 @@
 .textarea::placeholder{
   color: var(--clear-white);
 }
+@media screen and (max-width:991px) {
+  .textarea{
+    font-size:1.7rem;
+  }
+}
+@media screen and (max-width:767px) {
+  .textarea{
+    font-size:1.6rem;
+  }
+}
 
 .textarea:focus{
     outline:0 none;
@@ -115,7 +146,7 @@
 .textarea-label{
     font-size:2rem;
     color: var(--clear-white);
-    background-color: var(--color-page-header-bg);
+    background-color: #0d1117;
     font-weight: 700;
     width: min-content;
     visibility: hidden;

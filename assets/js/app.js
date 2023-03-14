@@ -80,14 +80,15 @@ import{
     function navegacion() {
         const secciones = document.querySelectorAll(".seccion");
         const itemsNav = document.querySelectorAll(".enlace-nav");
-        const height = window.innerHeight * .1;
+        // const height = window.innerHeight * .1;
         let seccionActual;
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     seccionActual = Array.from(itemsNav).find(item => item.dataset.url === entry.target.id);
-                    // console.log(seccionActual);
+                    console.log("seccion actual :"+seccionActual);
+                    console.log("entry target :"+entry.target.id);
                     if (seccionActual) {
                         seccionActual.classList.add("activo");
                     }
@@ -101,10 +102,10 @@ import{
         }, {
             root: null,
             rootMargin: '-17px 0px 0px 0px',
-            threshold: 0.6
+            threshold: 0.3
         });
 
-        secciones.forEach(seccion => observer.observe(seccion));
+        secciones.forEach(seccion => {observer.observe(seccion); });
 
     }
 

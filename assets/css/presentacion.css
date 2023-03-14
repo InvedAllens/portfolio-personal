@@ -19,7 +19,7 @@
     color: var(--accent-main);
     font-size: 3.5rem;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .presentacion__ocupacion{
         margin-top: 2rem;
         font-size: 2.2rem;
@@ -31,37 +31,31 @@
     margin-top: 1rem;
     gap: 2rem;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .enlaces-perfil{
         flex-direction: column;
         justify-content: center;
     }
 }
 .enlaces-perfil__item{
-    border-radius: 1rem;
     padding: 1rem;
-    border:1px solid var(--accent-ligth) ;
     margin-right: 1rem;
     color: var(--accent-ligth);
     transition: all 0.5s ease-out;
+    text-decoration:underline;
+    transition: all 0.3s ease-in;
 }
-.enlaces-perfil__item:hover a{
-    color: white;
-}
-.enlaces-perfil__item:hover{
-
-    /* background-color: var(--accent-ligth);
-    border-color: white; */
+.enlaces-perfil__item:hover a, .enlaces-perfil__item:hover{
+    color: var(--clear-white);
+    text-decoration: none;
     transform: scale(1.1);
-    
+
 }
 
 .enlace-descarga-cv{
     width:max-content;
     text-align: center;
-    
     margin: 0 auto;
-
 }
 .enlace-cv-elemento{
     display: flex;

@@ -112,7 +112,7 @@
     color: var(--clear-white);
 }
 .enlace-nav{
-    color: white;
+    color: var(--clear-white);
     position: relative;
 }
 @media screen and (max-width:767px) {
@@ -129,4 +129,18 @@
 .activo::before {
     width: 100%;
     background-color: var(--accent-main);
+}
+canvas {
+    display: block;
+    z-index: -2;
+    position: absolute;
+    left:0;
+    top:0;
+    max-width:100%;
+    max-height: 100vh;
+}
+@media screen and (max-width:767px) {
+    canvas{
+        display: none;
+    }
 }

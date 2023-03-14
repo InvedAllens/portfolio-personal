@@ -6,11 +6,11 @@
             "descripcion":"Estudiante de ingeniería eléctrica electrónica, apasionado por las tecnologías de la informacion y la resolución de problemas mediante estas."
         }
     ,
-    "sobreMi":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus ipsam sit aperiam qui iure porro, nam est quam libero dolorem at omnis aut vero ab eum nobis nemo quisquam mollitia.",
+    "sobreMi":"Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nibh odio, aliquam id lectus nec, mollis porta turpis. Praesent vitae diam elit. Curabitur blandit elit eros, non facilisis libero sodales vel. Nulla vitae feugiat turpis. Aliquam sed neque quis sapien porta blandit. Pellentesque in ante blandit, rutrum velit non, vestibulum dolor. Nunc maximus convallis ex, et egestas nibh convallis id. Duis eu diam id nisl accumsan aliquet. Vestibulum accumsan sem mauris, at scelerisque nulla blandit ac. Vestibulum rhoncus nisi vitae vestibulum rutrum.",
     "proyectos":[
         {
-            "nombre":"Aplicasion gestion de citas y servicios para una barberia  con MVC",
-            "descripcion":"Pagina web para el registro y gestion de citas para una barberia, los usuarios pueden selecionar la fecha y servicios para su cita y el administrador puede adminstrar los servicios y sus campos (CRUD) ademas de las citas de los usuarios.",
+            "nombre":"Aplicación, gestión de citas y servicios para una barbería con MVC",
+            "descripcion":"Página web para el registro y gestión de citas para una barbería, los usuarios pueden seleccionar la fecha y servicios para su cita y el administrador puede administrar los servicios y sus campos (CRUD) además de las citas de los usuarios",
             "tecnologias":{
                 "php":"",
                 "javascrip":"",
@@ -23,8 +23,8 @@
             
         },
         {
-            "nombre":"Pagina web para mostrar y administrar propiedades con MVC",
-            "descripcion":"Sitio web de bienes raices, se dispone de un login para el admin para gestionar los datos de los vendedores y los inmuebles en un CRUD, se uso Model view controller  ",
+            "nombre":"Página web para mostrar y administrar propiedades con MVC",
+            "descripcion":"Sitio web de bienes raíces, se dispone de un login para el admin para gestionar los datos de los vendedores y los inmuebles en un CRUD, se usó Model view controller  ",
             "tecnologias":{
                 "php":"",
                 "javascrip":"",
