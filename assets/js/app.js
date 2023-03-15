@@ -42,7 +42,7 @@ import{
         const ProyectosTexto=document.querySelectorAll(".proyecto__texto");
         let i=0;
         sobreMI.appendChild(sobreMiText);
-        await fetch("/data.json").then((response)=>{
+        await fetch("data.json").then((response)=>{
              const respuesta=response.json();
              respuesta.then((datos)=>{
                 presentacionNombre.innerHTML=`${datos.presentacion["nombre"]} | <span>${datos.presentacion["ocupacion"]}</span>`;
