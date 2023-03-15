@@ -124,6 +124,10 @@
 .proyecto__repositorio a{
     color: var(--dark-main);
 }
+.proyectos__recientes{
+    color: var(--clear-white);
+    margin-bottom: 2rem;
+}
 /* .proyecto__texto{
     overflow: scroll;
 }
