@@ -11,7 +11,7 @@ import{
         const fecha = document.querySelector("#fecha");
         //const fechaActual=new Date();
         const year = new Date().getFullYear();
-        obtenerMisDatos();
+        //obtenerMisDatos();
         let size = screen.width;
         fecha.innerHTML = year;
         if (size >= 768) {
@@ -42,7 +42,7 @@ import{
         const ProyectosTexto=document.querySelectorAll(".proyecto__texto");
         let i=0;
         sobreMI.appendChild(sobreMiText);
-        await fetch("data.json").then((response)=>{
+        await fetch("https://github.com/InvedAllens/portfolio-personal/blob/main/data.json").then((response)=>{
              const respuesta=response.json();
              respuesta.then((datos)=>{
                 presentacionNombre.innerHTML=`${datos.presentacion["nombre"]} | <span>${datos.presentacion["ocupacion"]}</span>`;
