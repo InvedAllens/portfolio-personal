@@ -16,15 +16,15 @@ const mensajesError={
 
     
 };
-const verificarTipoInput={
-    nacimiento:(e)=>{validarEdad(e);}
-}
+// const verificarTipoInput={
+//     nacimiento:(e)=>{validarEdad(e);}
+// }
 export function validarInput(e){
 
     const tipoInput=e.target.dataset.tipo;
-    if(verificarTipoInput[tipoInput]){
-        verificarTipoInput[tipoInput](e);
-    }
+    // if(verificarTipoInput[tipoInput]){
+    //     verificarTipoInput[tipoInput](e);
+    // }
     if(e.target.validity.valid){
         e.target.parentElement.classList.remove("input-container--invalid");
         console.log(e.target.validity);
@@ -53,19 +53,3 @@ function mostrarMensajeError(tipoInput,input){
     return mensajes;
 }
 
-
-function validarEdad(e){
-    const inputFecha=new Date(e.target.value);
-    const fechaCliente=new Date(inputFecha.getUTCFullYear()+18,inputFecha.getUTCMonth(),inputFecha.getUTCDate());
-    const fechaActual=new Date();
-    const esMayorEdad=(fechaCliente<=fechaActual);
-    if(!esMayorEdad){
-         e.target.setCustomValidity("Debes de ser mayor de 18 años para registrarte");
-         e.target.value=null;
-    }else{
-        e.target.setCustomValidity('');
-    }
-
-    console.log(fechaCliente);
-    console.log(esMayorEdad);
-}

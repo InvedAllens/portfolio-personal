@@ -33,7 +33,7 @@ import{
         }, true);
         keyboard();
     }
-    function obtenerMisDatos(){
+    async function obtenerMisDatos(){
         const presentacionNombre=document.querySelector(".presentacion__ocupacion");
         const presentacionDescripcion=document.querySelector(".presentacion__descripcion");
         const sobreMI=document.querySelector(".sobreMi");
@@ -42,7 +42,7 @@ import{
         const ProyectosTexto=document.querySelectorAll(".proyecto__texto");
         let i=0;
         sobreMI.appendChild(sobreMiText);
-        fetch("/data.json").then((response)=>{
+        await fetch("/data.json").then((response)=>{
              const respuesta=response.json();
              respuesta.then((datos)=>{
                 presentacionNombre.innerHTML=`${datos.presentacion["nombre"]} | <span>${datos.presentacion["ocupacion"]}</span>`;

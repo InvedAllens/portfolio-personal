@@ -3,6 +3,7 @@
     display: flex;
     margin: 1rem auto;
     align-items:center;
+    justify-content: center;
     height: 85vh;
     overflow: hidden;
 }
@@ -97,24 +98,24 @@
         text-align: center;
     }
 }
+.presentacion picture{
+    text-align: center;
+}
 .presentacion__imagen{
     width: 30rem;
     height: 30rem;
     margin: 0 auto;
     border-radius: 50%;
-    box-shadow: 2px 2px 2px 1px var(--accent-ligth);
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+    box-shadow: 2px 2px 2px 1px var(--accent-ligth); 
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width:991px) {
     .presentacion__imagen{
         width: 20rem;
         height: 20rem;
     }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .presentacion__imagen{
         width: 15rem;
         height: 15rem;
