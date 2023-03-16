@@ -34,8 +34,10 @@
 }
 @media screen and (max-width:767px) {
     .enlaces-perfil{
-        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap:1.5rem;
+        flex-wrap: wrap;
     }
 }
 .enlaces-perfil__item{

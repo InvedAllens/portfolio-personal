@@ -6,6 +6,11 @@
   margin: 0 auto;
   color: var(--accent-ligth);
 }
+@media screen and (max-width:767px) {
+  .contactame__texto{
+    width: 90%;
+  }
+}
 .contactame__texto span{
   color: var(--accent-main);
 }

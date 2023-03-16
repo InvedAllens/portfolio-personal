@@ -87,8 +87,8 @@ import{
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     seccionActual = Array.from(itemsNav).find(item => item.dataset.url === entry.target.id);
-                    console.log("seccion actual :"+seccionActual);
-                    console.log("entry target :"+entry.target.id);
+                    //console.log("seccion actual :"+seccionActual);
+                    //console.log("entry target :"+entry.target.id);
                     if (seccionActual) {
                         seccionActual.classList.add("activo");
                     }

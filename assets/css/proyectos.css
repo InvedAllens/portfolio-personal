@@ -85,6 +85,7 @@
 @media screen and (max-width:767px) {
     .proyecto__descripcion{
         height:auto;
+        width: 90%;
     }
 }
 .proyecto__nombre{

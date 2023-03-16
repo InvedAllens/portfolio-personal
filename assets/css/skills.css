@@ -4,7 +4,7 @@
 }
 @media screen and (max-width:767px) {
     .skills{
-        width: 70vw;
+        width: 90vw;
     }
     
 }
@@ -31,8 +31,7 @@
 }
 @media screen and (max-width:767px) {
     .skills__categoria{
-        flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         justify-content: center;
         align-items: center;
     }

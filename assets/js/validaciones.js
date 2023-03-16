@@ -27,7 +27,7 @@ export function validarInput(e){
     // }
     if(e.target.validity.valid){
         e.target.parentElement.classList.remove("input-container--invalid");
-        console.log(e.target.validity);
+        //console.log(e.target.validity);
     }else{
         e.target.parentElement.classList.add("input-container--invalid");
         e.target.parentElement.querySelector(".input-message-error").innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e73d3d" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
@@ -39,10 +39,10 @@ export function validarInput(e){
 
 function mostrarMensajeError(tipoInput,input){
     //console.log(mensajesError);
-    console.log(input.validity);
-    console.log(input.value);
+    //console.log(input.validity);
+    //console.log(input.value);
     let mensajes='';
-    console.log(mensajesError[tipoInput])
+    //console.log(mensajesError[tipoInput])
     for(const [clave,valor] of Object.entries(mensajesError[tipoInput])){
             if(input.validity[clave]){
                 mensajes=valor;
