@@ -40,9 +40,9 @@
     }
 }
 
-.proyecto__imagen{
-    width: 95%;
+.proyecto__imagen{ 
     margin: auto;
+    object-fit:contain;
 }
 .proyecto__contenedor__imagen{
     width: 35%;
@@ -103,8 +103,10 @@
     gap: 1rem;
     flex-wrap: wrap;
 }
-@media screen and (max-width) {
-    
+@media screen and (max-width:767px) {
+    .proyecto__enlaces{
+        gap:0.7rem;
+    }
 }
 .proyecto__deploy{
     background-color:var(--accent-ligth) ;

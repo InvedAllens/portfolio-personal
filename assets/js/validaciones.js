@@ -4,8 +4,9 @@ const mensajesError={
     },
     email:{
         valueMissing:"Este campo no puede estar vacio",
-        typeMismatch:"El correo no es valido"
-    },
+        typeMismatch:"El correo no es valido",
+        patternMismatch:"El correo debe coincidir con el siguiente formato usuario@dominio.com"
+    },  
     asunto:{
         valueMissing:"Este campo no puede estar vacio",
         patternMismatch:"Al menos 6 caracteres, máximo 12, debe contener una letra minúscula, una letra mayúscula, un número y no puede contener caracteres especiales."
