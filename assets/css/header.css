@@ -1,6 +1,7 @@
 .header{
    background-color:var(--color-page-header-bg);
    z-index: 99;
+   overflow: hidden;
 }
 .logo{
     font-weight: 500;

@@ -33,6 +33,7 @@ body{
     font-weight: 300;
     font-size:1.6rem;
     background-color: var(--dark-main);
+
 }
 /* contrarresta el efecto del header fijo  */
 .body-scroll{
@@ -143,4 +144,6 @@ label,input[type='text'],input[type='email']{
 .relative{
     position: relative;
 }
-
+.centrar{
+    text-align: center;
+}

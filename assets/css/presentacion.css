@@ -104,11 +104,8 @@
     text-align: center;
 }
 .presentacion__imagen{
-    width: 30rem;
-    height: 30rem;
-    margin: 0 auto;
-    border-radius: 50%;
-    box-shadow: 2px 2px 2px 1px var(--accent-ligth); 
+    width: 45rem;
+    margin: 0rem 0rem 15rem 5rem;
 }
 
 @media screen and (max-width:991px) {
@@ -121,5 +118,10 @@
     .presentacion__imagen{
         width: 15rem;
         height: 15rem;
+    }
+}
+@media screen and (max-width:468px) {
+    .presentacion picture{
+        display: none;
     }
 }

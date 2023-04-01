@@ -33,33 +33,31 @@ import{
         }, true);
         keyboard();
     }
-    async function obtenerMisDatos(){
-        const presentacionNombre=document.querySelector(".presentacion__ocupacion");
-        const presentacionDescripcion=document.querySelector(".presentacion__descripcion");
-        const sobreMI=document.querySelector(".sobreMi");
-        const sobreMiText=document.createElement("P");
-        const nombreProyectos=document.querySelectorAll(".proyecto__nombre");
-        const ProyectosTexto=document.querySelectorAll(".proyecto__texto");
-        let i=0;
-        sobreMI.appendChild(sobreMiText);
-        await fetch("https://github.com/InvedAllens/portfolio-personal/blob/main/data.json").then((response)=>{
-             const respuesta=response.json();
-             respuesta.then((datos)=>{
-                presentacionNombre.innerHTML=`${datos.presentacion["nombre"]} | <span>${datos.presentacion["ocupacion"]}</span>`;
-                presentacionDescripcion.innerHTML=`${datos.presentacion.descripcion}`;
-                sobreMiText.textContent=datos.sobreMi;
-                nombreProyectos.forEach((proyectoNombre)=>{
-                    proyectoNombre.textContent=datos.proyectos[i].nombre;
-                    ProyectosTexto[i].textContent=datos.proyectos[i].descripcion;
-                    i++;
-                });
-            })
+    // async function obtenerMisDatos(){
+    //     const presentacionNombre=document.querySelector(".presentacion__ocupacion");
+    //     const presentacionDescripcion=document.querySelector(".presentacion__descripcion");
+    //     const sobreMI=document.querySelector(".sobreMi");
+    //     const sobreMiText=document.createElement("P");
+    //     const nombreProyectos=document.querySelectorAll(".proyecto__nombre");
+    //     const ProyectosTexto=document.querySelectorAll(".proyecto__texto");
+    //     let i=0;
+    //     sobreMI.appendChild(sobreMiText);
+    //     await fetch("https://github.com/InvedAllens/portfolio-personal/blob/main/data.json").then((response)=>{
+    //          const respuesta=response.json();
+    //          respuesta.then((datos)=>{
+    //             presentacionNombre.innerHTML=`${datos.presentacion["nombre"]} | <span>${datos.presentacion["ocupacion"]}</span>`;
+    //             presentacionDescripcion.innerHTML=`${datos.presentacion.descripcion}`;
+    //             sobreMiText.textContent=datos.sobreMi;
+    //             nombreProyectos.forEach((proyectoNombre)=>{
+    //                 proyectoNombre.textContent=datos.proyectos[i].nombre;
+    //                 ProyectosTexto[i].textContent=datos.proyectos[i].descripcion;
+    //                 i++;
+    //             });
+    //         })
             
-            // presentacionNombre.value=response.json().nombre;
-            // console.log(presentacionNombre);
-        })
+    //     })
 
-    }
+    // }
 
     function navegacionFija() {
         const header = document.querySelector(".header");

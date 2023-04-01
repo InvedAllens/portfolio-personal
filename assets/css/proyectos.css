@@ -131,6 +131,22 @@
     color: var(--clear-white);
     margin-bottom: 2rem;
 }
+
+.ver-mas{
+    color: var(--accent-main);
+    text-align:center;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1.9rem;
+}
+.ver-mas:hover{
+    filter: brightness(110%);
+}
+
+.go-back{
+    text-align: center;
+    
+}
 /* .proyecto__texto{
     overflow: scroll;
 }
