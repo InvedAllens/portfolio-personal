@@ -16,14 +16,16 @@
 .proyecto-contenedor{
     margin: 0 auto;
     width: 90%;
-    max-height: 55vh;
+    max-height: 60vh;
+    height: auto;
     display: flex;
     border: 1px solid var(--accent-main);
     box-shadow: 2px 2px 2px 1px rgba(247, 129, 102, 0.308);
     border-radius: 1rem;
     gap: 1rem;
-    padding: 1rem;
+    padding: 3rem;
     overflow: hidden;
+    box-sizing: content-box;
 }
 @media screen and (max-width:991px) {
     .proyecto-contenedor{
@@ -37,6 +39,7 @@
         max-height:none;
         height: auto;
         gap: 2rem;
+        padding: 1rem;
     }
 }
 
@@ -102,6 +105,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 @media screen and (max-width:767px) {
     .proyecto__enlaces{

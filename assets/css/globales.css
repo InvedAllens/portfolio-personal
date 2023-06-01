@@ -4,7 +4,7 @@
     --clear-white:#c4c4c4;
     --accent-ligth: #7bb8d1;
     --accent-main:#f78166;
-    --color-page-header-bg: #0d1117c0;
+    --color-page-header-bg: #0d1117a4;
     --accent-secondary:#9CDD29;
     --warning-color:#e73d3d;
     /*opacidad*/
@@ -51,7 +51,8 @@ p{
 }
 @media screen and (max-width:767px) {
     p{
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        line-height: 1.1;
     }
 }
 

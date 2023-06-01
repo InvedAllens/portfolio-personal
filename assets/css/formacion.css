@@ -32,7 +32,7 @@ gap: 1.2rem;
     padding-bottom: 4rem;
     border-color: var(--clear-white);
     display: flex;
-    gap: 4rem;
+    gap: 10%;
     justify-content: flex-start;
     border-left: 1px solid #585353;
     text-align:justify;

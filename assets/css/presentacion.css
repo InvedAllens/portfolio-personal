@@ -120,8 +120,8 @@
         height: 15rem;
     }
 }
-@media screen and (max-width:468px) {
+@media screen and (max-width:768px) {
     .presentacion picture{
-        display: none;
+        display:none;
     }
 }
