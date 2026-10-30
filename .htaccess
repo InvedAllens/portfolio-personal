@@ -1,0 +1,12 @@
+Options -MultiViews -Indexes
+RewriteEngine On
+
+# --- Seguridad: la raiz del proyecto es la carpeta publica, asi que se bloquea todo lo que no debe verse ---
+# archivos ocultos (.env, .git, .gitignore...) y carpetas de codigo / dependencias
+RewriteRule ^(\.|vendor/|node_modules/|includes/|controllers/|models/|classes/|views/|src/|database/) - [F,L]
+# archivos de configuracion, codigo del framework y documentacion
+RewriteRule ^(composer\.(json|lock)|package(-lock)?\.json|gulpfile\.js|Router\.php|README\.md|Procfile)$ - [F,L]
+
+# todo lo que no sea un archivo existente (css, js, imagenes) lo atiende index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
