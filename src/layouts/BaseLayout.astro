@@ -1,0 +1,55 @@
+---
+import Arrow from '../components/Arrow.astro';
+import { profile } from '../data/site';
+import '@fontsource-variable/space-grotesk';
+import '../styles/global.css';
+import '../styles/orbital.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const isProjects = Astro.url.pathname.includes('/proyectos/');
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#10101b" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.toString()} />
+    <link rel="canonical" href={canonical.toString()} />
+    <link rel="icon" href={`${base}images/mi-logo2.svg`} type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="site-shell">
+      <header class="site-header" id="inicio">
+        <div class="container header-inner">
+          <a class="brand" href={base} aria-label="Aldo Allende · inicio"><span class="brand-mark" aria-hidden="true">A<span></span></span><span>Aldo Allende</span></a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú de navegación"><span></span><span></span><span></span></button>
+          <nav class="site-nav" id="nav-links" aria-label="Navegación principal">
+            <a href={isProjects ? `${base}proyectos/` : `${base}#proyectos`} aria-current={isProjects ? 'page' : undefined}>Proyectos</a>
+            <a href={`${base}#sobre-mi`}>Sobre mí</a>
+            <a href={`${base}#habilidades`}>Habilidades</a>
+            <a href={`${base}#trayectoria`}>Trayectoria</a>
+            <a class="nav-contact" href={`${base}#contacto`}>Hablemos <Arrow /></a>
+          </nav>
+        </div>
+      </header>
+      <main id="contenido"><slot /></main>
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div><a class="brand footer-brand" href={base}><span class="brand-mark" aria-hidden="true">A<span></span></span><span>Aldo Allende</span></a><p>Diseño, desarrollo y aprendizaje continuo.</p></div>
+          <div class="footer-right"><div class="footer-links"><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <Arrow /></a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <Arrow /></a><a href={`mailto:${profile.email}`}>Correo <Arrow /></a></div><span>© <span id="footer-year">2026</span> Aldo Allende</span></div>
+        </div>
+      </footer>
+    </div>
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

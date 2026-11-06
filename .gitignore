@@ -1,11 +1,8 @@
-# dependencias (se instalan con composer install / npm install)
-vendor/
 node_modules/
-
-# configuracion local y secretos: NUNCA subir
+dist/
+.astro/
 .env
-
-# despliegue / sistema
-Procfile
+.env.*
+!.env.example
 .DS_Store
-Thumbs.db
+*.log
