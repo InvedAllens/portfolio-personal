@@ -1,0 +1,18 @@
+---
+import Arrow from './Arrow.astro';
+import { profile } from '../data/site';
+---
+<form class="contact-form" id="contact-form" method="POST" action={profile.formspree}>
+  <input type="hidden" name="_subject" value="Mensaje desde mi portafolio" />
+  <div class="field-grid">
+    <label>Nombre <input type="text" name="nombre" autocomplete="name" minlength="2" maxlength="80" required placeholder="Tu nombre" /></label>
+    <label>Correo electrónico <input type="email" name="email" autocomplete="email" maxlength="160" required placeholder="tu@correo.com" /></label>
+  </div>
+  <label>Asunto <input type="text" name="asunto" minlength="3" maxlength="120" required placeholder="¿En qué puedo ayudarte?" /></label>
+  <label>Mensaje <textarea name="mensaje" rows="5" minlength="10" maxlength="5000" required placeholder="Cuéntame sobre tu proyecto..." ></textarea></label>
+  <div class="form-bottom">
+    <button class="button button-primary" type="submit">Enviar mensaje <Arrow /></button>
+    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+  </div>
+  <p class="form-note">También puedes escribirme por correo directamente.</p>
+</form>

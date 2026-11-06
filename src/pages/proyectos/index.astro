@@ -1,0 +1,23 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Proyectos | Aldo Allende" description="Aplicaciones web creadas por Aldo Allende, con enlaces a sus demos y repositorios de GitHub.">
+  <section class="projects-page-hero">
+    <div class="container">
+      <a class="breadcrumb" href={base}>← Volver al inicio</a>
+      <span class="section-number">PORTAFOLIO <b>/</b> {String(projects.length).padStart(2, '0')} PROYECTOS</span>
+      <h1>Archivo de proyectos<span class="accent">.</span></h1>
+      <p>Aplicaciones web, sitios y ejercicios de programación. Puedes explorar cada demostración y consultar su código fuente.</p>
+    </div>
+  </section>
+  <section class="section all-projects" aria-label="Todos mis proyectos">
+    <div class="container">
+      <div class="projects-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} />)}</div>
+      <div class="section-bottom"><a class="button button-primary" href={`${base}#contacto`}>Hablemos de tu proyecto <Arrow /></a></div>
+    </div>
+  </section>
+</BaseLayout>
