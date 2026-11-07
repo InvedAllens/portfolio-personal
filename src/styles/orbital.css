@@ -9,7 +9,7 @@
   mask-image: linear-gradient(110deg, transparent 3%, #000 76%);
 }
 .cosmic-background { position: absolute; z-index: -1; inset: 0; pointer-events: none; overflow: hidden; }
-.cosmic-background canvas { display: block; }
+.cosmic-field { display: block; width: 100%; height: 100%; }
 .hero { display: grid; grid-template-columns: minmax(0, .87fr) minmax(0, 1.13fr); align-items: center; padding-block: 57px 40px; }
 .hero-copy { z-index: 1; padding-block: 25px; }
 .hero-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin-bottom: 26px; }
@@ -119,11 +119,26 @@
   .mission-hud { left: 8px; right: 8px; }
   .mission-hud > span { padding-inline: 6px; }
 }
-#cosmic-canvas { position: absolute; inset: 0; }
-.cosmic-background { mask-image: linear-gradient(110deg, #000a, #000); }
+.cosmic-background { opacity: .82; }
 @media (min-width: 1000px) {
   .hero { padding-block: 40px 28px; }
   .orbital-scene { width: min(100%, 630px); justify-self: end; }
 }
 
 @media (pointer: coarse) { #mission-help span:first-child { display: none; } #mission-help span + span { margin-top: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .orbital-intro .cosmic-field { animation: cosmic-drift 4.1s ease-out both; }
+  .orbital-intro .orbital-view:not(.is-live) .orbital-still { animation: orbit-intro 4.1s ease-in-out; }
+  .hero-backdrop:has(.mission:not([hidden])) .cosmic-field,
+  .orbital-view:has(.mission:not([hidden])) .orbital-still { animation-play-state: paused; }
+}
+
+@keyframes cosmic-drift {
+  from { transform: translate3d(-5px, 3px, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes orbit-intro {
+  50% { transform: translateY(-4px) rotate(2deg); }
+}

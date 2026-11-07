@@ -2,8 +2,6 @@
 const menuButton = document.querySelector<HTMLButtonElement>('#menu-toggle');
 const nav = document.querySelector<HTMLElement>('#nav-links');
 
-if (menuButton && nav) document.documentElement.classList.add('menu-ready');
-
 function closeMenu() {
   if (!menuButton || !nav) return;
   menuButton.setAttribute('aria-expanded', 'false');

@@ -6,7 +6,6 @@ const keys = new Map([
 export function connectMission(scene, onOpen, canPlay) {
   const mission = scene.querySelector('[data-mission]');
   const field = scene.querySelector('[data-mission-field]');
-  const controls = scene.querySelector('[data-orbital-controls]');
   const start = scene.querySelector('[data-mission-start]');
   const startLabel = start.querySelector('span');
   const pauseButton = scene.querySelector('[data-mission-pause]');
@@ -28,7 +27,7 @@ export function connectMission(scene, onOpen, canPlay) {
   let roundAction = 'reset';
   let game;
   let pointerId = null;
-  controls.hidden = false;
+  start.hidden = false;
 
   function clearInput() {
     held.clear();
