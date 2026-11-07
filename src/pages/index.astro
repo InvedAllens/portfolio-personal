@@ -1,10 +1,12 @@
 ---
+import { Picture } from 'astro:assets';
 import Arrow from '../components/Arrow.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ContactForm from '../components/ContactForm.astro';
 import CosmicBackground from '../components/CosmicBackground.astro';
 import OrbitalScene from '../components/OrbitalScene.astro';
+import ship from '../assets/nave-orbital.webp';
 import { profile, skillGroups, experience, education } from '../data/site';
 import { projects } from '../data/projects';
 
@@ -47,7 +49,7 @@ const timeline = [
         <a class="text-link section-link" href={`${base}proyectos/`}>Ver los {projects.length} proyectos <Arrow /></a>
       </div>
       <div class="projects-grid featured-grid">
-        {featured.map((project, index) => <ProjectCard project={project} index={index} lead={index === 0} />)}
+        {featured.map((project, index) => <ProjectCard project={project} index={index} featured lead={index === 0} />)}
       </div>
     </div>
   </section>
@@ -55,7 +57,18 @@ const timeline = [
   <section class="section section-tinted" id="sobre-mi" aria-labelledby="about-heading">
     <div class="container about-layout">
       <figure class="about-illustration" data-about-illustration>
-        <img src={`${base}images/nave-orbital.webp`} width="800" height="600" loading="lazy" decoding="async" alt="Ilustración de una nave de exploración sobre una órbita violeta" />
+        <Picture
+          src={ship}
+          alt="Ilustración de una nave de exploración sobre una órbita violeta"
+          formats={['avif']}
+          fallbackFormat="webp"
+          width={480}
+          widths={[240, 320, 400, 480, 640, 800]}
+          sizes="auto, (max-width: 640px) calc(100vw - 36px), min(430px, 40vw)"
+          quality={55}
+          loading="lazy"
+          decoding="async"
+        />
       </figure>
       <div class="about-text">
         <span class="section-number">02 <b>/</b> SOBRE MÍ</span>
@@ -117,3 +130,26 @@ const timeline = [
     </div>
   </section>
 </BaseLayout>
+
+<style is:global>
+  @media screen {
+    .hero-backdrop ~ :is(#sobre-mi, #habilidades, #trayectoria, #intereses, #contacto) {
+      content-visibility: auto;
+    }
+
+    /* Reserve space before the browser measures each off-screen section. */
+    #sobre-mi { contain-intrinsic-block-size: auto 28rem; }
+    #habilidades { contain-intrinsic-block-size: auto 22rem; }
+    #trayectoria { contain-intrinsic-block-size: auto 28rem; }
+    #intereses { contain-intrinsic-block-size: auto 11rem; }
+    #contacto { contain-intrinsic-block-size: auto 30rem; }
+
+    @media (max-width: 640px) {
+      #sobre-mi { contain-intrinsic-block-size: auto 50rem; }
+      #habilidades { contain-intrinsic-block-size: auto 42rem; }
+      #trayectoria { contain-intrinsic-block-size: auto 49rem; }
+      #intereses { contain-intrinsic-block-size: auto 18rem; }
+      #contacto { contain-intrinsic-block-size: auto 47rem; }
+    }
+  }
+</style>

@@ -1,19 +1,14 @@
 import { connectMission } from './mission-controls.js';
+import { mountOrbital } from './orbital-controls.js';
 
 const scene = document.querySelector('[data-orbital]');
 const view = document.querySelector('[data-orbital-view]');
-const cosmos = document.getElementById('cosmic-canvas');
 const help = document.querySelector('[data-orbital-help]');
+const backdrop = view.closest('.hero-backdrop');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const runScene = mountOrbital(view);
 let visible = false;
-let ready = false;
 let missionOpen = false;
-let sceneTask;
-let cosmosTask;
-let runScene;
-let runCosmos;
-let intro = false;
-let introPlayed = false;
 
 const mission = connectMission(scene, (open) => {
   missionOpen = open;
@@ -25,41 +20,19 @@ function sync() {
   const idle = !missionOpen && !reduced.matches && visible && pageVisible;
   document.documentElement.dataset.motion = pageVisible && !reduced.matches ? 'on' : 'off';
   if (!visible || !pageVisible) mission.pause();
-  help.textContent = runScene && idle ? 'Arrastra para girar el planeta' : 'Minijuego de naves';
-  runScene?.(idle, idle && intro);
-  runCosmos?.(idle && intro);
-
-  if (!idle || !ready) return;
-  sceneTask ??= import('./orbital-renderer.js')
-    .then(({ mountOrbital }) => {
-      runScene = mountOrbital(view);
-      sync();
-    })
-    .catch(() => { /* Keep the vector illustration visible. */ });
-  if (!runScene || introPlayed) return;
-  introPlayed = intro = true;
-  runScene(true, true);
-  setTimeout(() => {
-    intro = false;
-    sync();
-  }, 4100);
-
-  cosmosTask ??= import('./cosmic.js')
-    .then(async ({ mountCosmos }) => {
-      runCosmos = await mountCosmos(cosmos);
-      sync();
-    })
-    .catch(() => { /* Keep the static background visible. */ });
+  help.textContent = idle ? 'Arrastra para girar el planeta' : 'Minijuego de naves';
+  runScene(idle);
 }
 
-function schedule() {
-  const start = () => {
-    ready = true;
-    sync();
-  };
-  if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1000 });
-  else setTimeout(start, 250);
+function startAmbientMotion() {
+  if (missionOpen || reduced.matches) return;
+  backdrop?.classList.add('orbital-intro');
+  view.removeEventListener('pointerdown', startAmbientMotion);
+  view.removeEventListener('keydown', startAmbientMotion);
 }
+
+view.addEventListener('pointerdown', startAmbientMotion);
+view.addEventListener('keydown', startAmbientMotion);
 
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(([entry]) => {
@@ -82,6 +55,4 @@ if ('IntersectionObserver' in window) {
 }
 document.addEventListener('visibilitychange', sync);
 reduced.addEventListener('change', sync);
-if (document.readyState === 'complete') schedule();
-else window.addEventListener('load', schedule, { once: true });
 sync();

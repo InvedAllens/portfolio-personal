@@ -2,6 +2,7 @@
 import Arrow from '../components/Arrow.astro';
 import { profile } from '../data/site';
 import '@fontsource-variable/space-grotesk';
+import displayFont from '@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url';
 import '../styles/global.css';
 import '../styles/orbital.css';
 interface Props { title: string; description: string; }
@@ -24,6 +25,9 @@ const isProjects = Astro.url.pathname.includes('/proyectos/');
     <meta property="og:url" content={canonical.toString()} />
     <link rel="canonical" href={canonical.toString()} />
     <link rel="icon" href={`${base}images/mi-logo2.svg`} type="image/svg+xml" />
+    <link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin="anonymous" />
+    {!isProjects && <link rel="preload" href={`${base}images/orbita.svg`} as="image" fetchpriority="high" />}
+    <script is:inline>document.documentElement.classList.add('menu-ready');</script>
     <title>{title}</title>
   </head>
   <body>

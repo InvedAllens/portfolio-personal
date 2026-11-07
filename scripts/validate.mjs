@@ -17,13 +17,11 @@ assert.match(read('src/pages/proyectos/index.astro'), /projects\.map/);
 assert.match(read('public/proyectos.html'), /\/portfolio-personal\/proyectos\//);
 for (const id of originalImageIds) {
   assert.ok(source.includes(`image: '${id}'`), `Falta el proyecto ${id}`);
-  for (const type of ['avif', 'webp']) {
-    const file = `public/images/${id}.${type}`;
-    assert.ok(exists(file), `Falta la imagen ${file}`);
-    assert.ok(statSync(path.join(root, file)).size > 100, `Imagen vacía: ${file}`);
-  }
+  const file = `src/assets/projects/${id}.webp`;
+  assert.ok(exists(file), `Falta la imagen ${file}`);
+  assert.ok(statSync(path.join(root, file)).size > 100, `Imagen vacía: ${file}`);
 }
-for (const file of ['src/pages/index.astro','src/pages/proyectos/index.astro','src/layouts/BaseLayout.astro','src/styles/global.css','public/images/nave-orbital.webp','public/images/mi-logo2.svg']) {
+for (const file of ['src/pages/index.astro','src/pages/proyectos/index.astro','src/layouts/BaseLayout.astro','src/styles/global.css','src/assets/nave-orbital.webp','public/images/mi-logo2.svg']) {
   assert.ok(exists(file), `Falta ${file}`);
 }
 assert.match(read('src/pages/index.astro'), /timeline-item--current/);
@@ -33,7 +31,7 @@ assert.match(read('src/components/OrbitalScene.astro'), /data-mission-start/);
 assert.match(read('src/scripts/mission-game.js'), /import\('p5'\)/);
 assert.ok(!exists('public/images/aldoallens.avif') && !exists('public/images/aldoallens.webp'));
 assert.match(read('public/images/orbita.svg'), /^<svg /);
-assert.match(read('src/scripts/cosmic.js'), /import\('p5'\)/);
+assert.match(read('src/components/CosmicBackground.astro'), /<svg\b/);
 assert.match(read('src/scripts/motion.js'), /prefers-reduced-motion/);
 assert.equal(JSON.parse(read('package.json')).dependencies.p5, '1.11.13');
-console.log('Correcto: 7 proyectos, 14 imágenes, ruta base, minijuego orbital, ilustración y dos hitos actuales.');
+console.log('Correcto: 7 proyectos con imágenes fuente, ruta base, minijuego orbital, ilustración y dos hitos actuales.');

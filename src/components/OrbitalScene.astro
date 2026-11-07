@@ -3,7 +3,7 @@ const base = import.meta.env.BASE_URL;
 ---
 <figure class="orbital-scene" data-orbital>
   <div class="orbital-view" data-orbital-view>
-    <img class="orbital-still" src={`${base}images/orbita.svg`} width="620" height="520" alt="Planeta con anillos luminosos y pequeñas lunas" decoding="async" />
+    <img class="orbital-still" src={`${base}images/orbita.svg`} width="620" height="520" alt="Planeta con anillos luminosos y pequeñas lunas" fetchpriority="high" />
     <canvas class="orbital-canvas" width="620" height="520" aria-hidden="true"></canvas>
     <span class="orbital-cross orbital-cross--left" aria-hidden="true">+</span>
     <span class="orbital-cross orbital-cross--right" aria-hidden="true">+</span>
@@ -22,11 +22,11 @@ const base = import.meta.env.BASE_URL;
     </section>
   </div>
 
-  <div class="orbital-controls" data-orbital-controls hidden>
+  <div class="orbital-controls">
     <p id="orbital-help" data-orbital-help>Minijuego de naves</p>
     <p id="mission-help" hidden><span>Flechas o WASD para moverte y espacio para disparar.</span> <span>Mantén pulsado y arrastra para volar y disparar.</span></p>
     <div class="mission-actions">
-      <button class="mission-button mission-button--primary" type="button" data-mission-start>
+      <button class="mission-button mission-button--primary" type="button" data-mission-start hidden>
         <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m7 5 8 5-8 5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /></svg>
         <span>Jugar</span>
       </button>
